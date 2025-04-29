@@ -11,15 +11,21 @@ public class SlideObjek : MonoBehaviour
     [Header("UI Components")]
     public Image planetImage;
     public Text titleText;
+    public Text subtitleText;
     public Text descriptionText;
     public Text pageNumberText;
-    public CanvasGroup canvasGroup;
+    public CanvasGroup contentCanvasGroup;
 
     [Header("Audio")]
     public AudioSource audioSource;
 
     private int currentIndex = 0;
     private bool isTransitioning = false;
+    private bool hasShownFirstSlide = false;
+
+    [Header("Navigation Buttons")]
+    public Button nextButton;
+    public Button prevButton;
 
     void Start() {
         ShowSlide(currentIndex);
@@ -39,43 +45,62 @@ public class SlideObjek : MonoBehaviour
     }
 
     public void ShowSlide(int index) {
+
+
         if (isTransitioning || index < 0 || index >= planetSlides.Count) return;
         StartCoroutine(SlideTransition(index));
+        
+        prevButton.gameObject.SetActive(index > 0);
+        nextButton.gameObject.SetActive(index < planetSlides.Count - 1);
+
     }
 
     IEnumerator SlideTransition(int index) {
         isTransitioning = true;
 
-        // Fade out
-        yield return StartCoroutine(FadeCanvas(1f, 0f, 0.5f));
+        // SLIDE PERTAMA TIDAK FADE HANYA SAAT PERTAMA KALI MASUK
+        bool skipFade = (index == 0 && !hasShownFirstSlide);
 
-        // Set new content
+        if (!skipFade) {
+            yield return StartCoroutine(FadeCanvas(contentCanvasGroup, 1f, 0f, 0.5f));
+        }
+
+        // Set content langsung
         DataObjek data = planetSlides[index];
         planetImage.sprite = data.image;
         titleText.text = data.title;
+        subtitleText.text = data.subtitle;
         descriptionText.text = data.description;
-        pageNumberText.text = $"{index + 1} / {planetSlides.Count}";
+        pageNumberText.text = $"{index + 1}";
 
         currentIndex = index;
 
-        // Play audio
+        if (!skipFade) {
+            yield return StartCoroutine(FadeCanvas(contentCanvasGroup, 0f, 1f, 0.5f));
+        }
+
+        // FLAG bahwa slide pertama sudah pernah ditampilkan
+        if (index == 0 && !hasShownFirstSlide) {
+            hasShownFirstSlide = true;
+        }
+
+        // Delay 2 detik setelah fade in baru play audio
         audioSource.Stop();
         audioSource.clip = data.voiceOver;
-        audioSource.Play();
 
-        // Fade in
-        yield return StartCoroutine(FadeCanvas(0f, 1f, 0.5f));
+        yield return new WaitForSeconds(2f);
+        audioSource.Play();
 
         isTransitioning = false;
     }
 
-    IEnumerator FadeCanvas(float from, float to, float duration) {
+    IEnumerator FadeCanvas(CanvasGroup targetCanvasGroup, float from, float to, float duration) {
         float time = 0f;
         while (time < duration) {
-            canvasGroup.alpha = Mathf.Lerp(from, to, time / duration);
+            targetCanvasGroup.alpha = Mathf.Lerp(from, to, time / duration);
             time += Time.deltaTime;
             yield return null;
         }
-        canvasGroup.alpha = to;
+        targetCanvasGroup.alpha = to;
     }
 }
