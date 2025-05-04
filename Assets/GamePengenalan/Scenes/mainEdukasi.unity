@@ -288,7 +288,7 @@ MonoBehaviour:
       mengelilingi Matahari selama 365 hari, dan berotasi setiap 24 jam menciptakan
       siang dan malam.'
     image: {fileID: 21300000, guid: 93fb2b35546610d4aa32d8938812b184, type: 3}
-    voiceOver: {fileID: 8300000, guid: c91796b25e7d442409129092259c33b5, type: 3}
+    voiceOver: {fileID: 8300000, guid: 423137aeefb952e47ad058d94a345340, type: 3}
   - title: SATURNUS
     subtitle: A Shooting Star That Catches Our Eye
     description: "Selamat datang di orbit keenam dari Matahari \u2014 inilah Saturnus,
@@ -298,68 +298,67 @@ MonoBehaviour:
       bisa berdiri di atasnya!\n Ukurannya hampir 9 kali lebih besar dari Bumi, dan
       satu harinya hanya berlangsung sekitar 10 jam."
     image: {fileID: 21300000, guid: 5fa4dbae61606a4408959fe86afcbc45, type: 3}
-    voiceOver: {fileID: 8300000, guid: d76f09623fa73ff4798a871ae5585552, type: 3}
+    voiceOver: {fileID: 8300000, guid: b88e39b2403130c4fbad42cc3addc78d, type: 3}
   - title: BULAN
     subtitle: Earth's Loyal Night Companion
-    description: Bulan menjadi teman setia Bumi yang selalu setia mengelilinginya.
-      Ia memantulkan cahaya Matahari dan menampilkan bentuk yang berbeda-beda, dari
-      bulan sabit hingga purnama. Meski tampak kecil, kekuatannya besar mampu menggerakkan
-      pasang surut laut dengan gaya gravitasinya. Permukaannya penuh kawah dan tanpa
-      udara, menyimpan banyak misteri yang terus diteliti.
+    description: "Bulan menjadi teman setia Bumi yang selalu setia mengelilinginya.
+      \nIa memantulkan cahaya Matahari dan menampilkan bentuk yang berbeda-beda,
+      dari bulan sabit hingga purnama. \nMeski tampak kecil, kekuatannya besar mampu
+      menggerakkan pasang surut laut dengan gaya gravitasinya. \nPermukaannya penuh
+      kawah dan tanpa udara, menyimpan banyak misteri yang terus diteliti."
     image: {fileID: 21300000, guid: 4cf8efa741b9586408a037a256c21598, type: 3}
-    voiceOver: {fileID: 8300000, guid: d76f09623fa73ff4798a871ae5585552, type: 3}
+    voiceOver: {fileID: 8300000, guid: b0d2dfa27e576a6489fd51cb468c5874, type: 3}
   - title: MATAHARI
     subtitle: The Giant Source of Energy
-    description: Menyinari kehidupan dengan hangatnya, Matahari menjadi pusat dari
-      tata surya kita. Bintang raksasa ini terus memancarkan energi yang membuat
-      tumbuhan tumbuh, cuaca terjadi, dan Bumi tetap hangat. Meski terlihat tenang
-      dari kejauhan, permukaannya penuh ledakan panas yang terus menyala tanpa henti.
+    description: "Menyinari kehidupan dengan hangatnya, Matahari menjadi pusat dari
+      tata surya kita.\nBintang raksasa ini terus memancarkan energi yang membuat
+      tumbuhan tumbuh, cuaca terjadi, dan Bumi tetap hangat. \nMeski terlihat tenang
+      dari kejauhan, permukaannya penuh ledakan panas yang terus menyala tanpa henti."
     image: {fileID: 21300000, guid: 2314e368a6e8ead4b8bdaca6a6a26896, type: 3}
-    voiceOver: {fileID: 8300000, guid: d76f09623fa73ff4798a871ae5585552, type: 3}
+    voiceOver: {fileID: 8300000, guid: 2a208fe348639014e8e6673a5499e12a, type: 3}
   - title: SATELIT
     subtitle: "The Space Explorer\u2019s Ride"
     description: "Mengelilingi Bumi dari kejauhan, satelit\nmengirim sinyal internet,
-      memandu arah lewat GPS, hingga memantau perubahan cuaca dan lingkungan. Meski
+      memandu arah lewat GPS, hingga memantau perubahan cuaca dan lingkungan. \nMeski
       tak terlihat langsung dari tanah, perannya sangat besar dalam menjaga dunia
       tetap terhubung.\n "
     image: {fileID: 21300000, guid: 724c9da3c96afb0409f8a25e508cc020, type: 3}
-    voiceOver: {fileID: 8300000, guid: d76f09623fa73ff4798a871ae5585552, type: 3}
+    voiceOver: {fileID: 8300000, guid: 227639b85d162a1488ebf050584ac1dc, type: 3}
   - title: ROKET
     subtitle: "The Space Explorer\u2019s Ride"
-    description: Roket menjadi pintu gerbang manusia menuju luar angkasa. Melaju
+    description: "Roket menjadi pintu gerbang manusia menuju luar angkasa. \nMelaju
       menembus langit, dengan tenaga dorong luar biasa, roket membawa satelit, teleskop,
-      dan astronot menjelajahi tempat-tempat yang jauh dari Bumi. Sekali meluncur,
-      kecepatannya bisa melampaui suara dan menembus atmosfer
+      dan astronot menjelajahi tempat-tempat yang jauh dari Bumi. \nSekali meluncur,
+      kecepatannya bisa melampaui suara dan menembus atmosfer"
     image: {fileID: 21300000, guid: 40d643e674e40c7408d8b701c29f64c5, type: 3}
-    voiceOver: {fileID: 8300000, guid: d76f09623fa73ff4798a871ae5585552, type: 3}
+    voiceOver: {fileID: 8300000, guid: 8e458b2e6922f294e82455fcff3c1ffa, type: 3}
   - title: ASTRONOT
     subtitle: Space Explorers
-    description: 'Berani menembus ruang angkasa, astronot adalah penjelajah sejati
-      di luar Bumi. Dengan pakaian khusus dan latihan ketat, mereka bekerja di tempat
-      tanpa gravitasi, memperbaiki satelit, melakukan eksperimen, dan kadang berjalan
-      di luar stasiun luar angkasa. Setiap misi mereka membawa ilmu pengetahuan dan
-      harapan baru bagi dunia.
-
-'
+    description: "Berani menembus ruang angkasa, astronot adalah penjelajah sejati
+      di luar Bumi. \nDengan pakaian khusus dan latihan ketat, mereka bekerja di
+      tempat tanpa gravitasi, memperbaiki satelit, melakukan eksperimen, dan kadang
+      berjalan di luar stasiun luar angkasa. \nSetiap misi mereka membawa ilmu pengetahuan
+      dan harapan baru bagi dunia.\n"
     image: {fileID: 21300000, guid: 340b5ef6ef4d3a84a858e747e8cd5d67, type: 3}
-    voiceOver: {fileID: 8300000, guid: d76f09623fa73ff4798a871ae5585552, type: 3}
+    voiceOver: {fileID: 8300000, guid: 15ca888a1bd66b840a9c6d11aeaddf62, type: 3}
   - title: LUBANG HITAM
     subtitle: The Mystery That Pulls Everything In
-    description: "Black hole atau lubang hitam ialah  tempat di luar angkasa dengan
-      gaya gravitasi super kuat bahkan cahaya pun tak bisa lolos darinya. Ia terbentuk
+    description: "Black hole atau lubang hitam ialah tempat di luar angkasa dengan
+      gaya gravitasi super kuat bahkan cahaya pun tak bisa lolos darinya. \nIa terbentuk
       dari bintang yang runtuh, dan bisa \u2018menelan\u2019 apa pun yang terlalu
-      dekat. Meski tak bisa dilihat langsung, jejak kekuatannya bisa dideteksi oleh
-      para ilmuwan, menjadikannya salah satu objek paling menakjubkan di alam semesta."
+      dekat. \nMeski tak bisa dilihat langsung, jejak kekuatannya bisa dideteksi
+      oleh para ilmuwan, menjadikannya salah satu objek paling menakjubkan di alam
+      semesta."
     image: {fileID: 21300000, guid: 03d76c31dd4d2aa4f9c12a78c7a0a425, type: 3}
-    voiceOver: {fileID: 8300000, guid: d76f09623fa73ff4798a871ae5585552, type: 3}
+    voiceOver: {fileID: 8300000, guid: 32c20ebf5becd8740b90dc214dd43f23, type: 3}
   - title: ALIEN
     subtitle: ' Beings from Beyond Earth'
-    description: 'Alien, makhluk luar angkasa yang sering menjadi bahan spekulasi,
-      mungkin ada di suatu tempat di galaksi yang jauh. Walaupun belum ada bukti
+    description: "Alien, makhluk luar angkasa yang sering menjadi bahan spekulasi,
+      mungkin ada di suatu tempat di galaksi yang jauh. \nWalaupun belum ada bukti
       nyata tentang keberadaan mereka, pencarian untuk menemukan kehidupan di luar
-      planet kita terus berlanjut. '
+      planet kita terus berlanjut. "
     image: {fileID: 21300000, guid: 7410d23574147ae40be80a0664d0ead4, type: 3}
-    voiceOver: {fileID: 8300000, guid: d76f09623fa73ff4798a871ae5585552, type: 3}
+    voiceOver: {fileID: 8300000, guid: 3a22685bbbd7d4a4c8f244e4276b7e69, type: 3}
   - title: ASTEROID
     subtitle: The Space Rocks That Orbit the Sun
     description: "Asteroid adalah batu besar yang terbang di luar angkasa dan mengelilingi
@@ -369,7 +368,7 @@ MonoBehaviour:
       asteroid sangat penting karena bisa bercerita tentang bagaimana tata surya
       kita terbentuk."
     image: {fileID: 21300000, guid: 3d9539845a1693e409ac265551841a06, type: 3}
-    voiceOver: {fileID: 8300000, guid: d76f09623fa73ff4798a871ae5585552, type: 3}
+    voiceOver: {fileID: 8300000, guid: 526846cb7f511474f91f1e0c589135c9, type: 3}
   planetImage: {fileID: 868689463}
   titleText: {fileID: 2034933529}
   subtitleText: {fileID: 357200155}
@@ -393,6 +392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEscapeToExit: 0
   isEscapeToPreviousScene: 1
+  isEscapeToTargetScene: 0
+  targetScene: 
 --- !u!1 &357200153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,7 +1430,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 10
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

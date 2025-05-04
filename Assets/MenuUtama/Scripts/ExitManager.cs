@@ -28,7 +28,10 @@ public class ExitManager : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
-        Debug.Log("Keluar dari game."); // Kalau di editor, ini hanya log, karena Application.Quit baru berfungsi di build.
+        Debug.Log("Keluar dari game."); 
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+    #endif
     }
 
     public void CancelExit()

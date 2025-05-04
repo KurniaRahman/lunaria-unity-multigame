@@ -6,6 +6,8 @@ public class KelolaHalaman : MonoBehaviour
 {
     public bool isEscapeToExit;
     public bool isEscapeToPreviousScene;
+    public bool isEscapeToTargetScene;
+    public string targetScene;
 
     void Update()
     {
@@ -18,6 +20,10 @@ public class KelolaHalaman : MonoBehaviour
             else if (isEscapeToExit)
             {
                 Application.Quit();
+            }
+            else if (isEscapeToTargetScene)
+            {
+                PindahKeScene(targetScene);
             }
         }
     }

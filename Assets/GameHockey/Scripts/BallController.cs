@@ -29,6 +29,11 @@ public class BallController : MonoBehaviour
 
     AudioSource SoundFx;
     public AudioClip hitSound;
+    public AudioClip goalSound;
+
+    private TrailRenderer trail;
+
+
 
 
     void Start()
@@ -48,6 +53,9 @@ public class BallController : MonoBehaviour
         panelSelesai.SetActive(false);
 
         SoundFx = GetComponent<AudioSource>();
+
+        trail = GetComponent<TrailRenderer>();
+
 
         // 🔹 Cari paddle
         pemukul1 = GameObject.Find("pemukul1");
@@ -82,7 +90,7 @@ public class BallController : MonoBehaviour
         {
             scoreP1 += 1;
             TampilkanScore();
-            StartCoroutine(HitungMundurDanMulaiGame(new Vector2(2, 0)));
+            StartCoroutine(SoundGoal(new Vector2(2, 0)));
 
             
                 
@@ -92,7 +100,7 @@ public class BallController : MonoBehaviour
         {
             scoreP2 += 1;                
             TampilkanScore();
-            StartCoroutine(HitungMundurDanMulaiGame(new Vector2(-2, 0)));
+            StartCoroutine(SoundGoal(new Vector2(-2, 0)));
         }
         else if (coll.gameObject.name == "pemukul1" || coll.gameObject.name == "pemukul2")
         {
@@ -106,6 +114,7 @@ public class BallController : MonoBehaviour
 
     void ResetBall()
     {
+        trail.enabled = false;
         transform.localPosition = Vector2.zero;
         rigid.linearVelocity = Vector2.zero;
     }
@@ -139,9 +148,9 @@ public class BallController : MonoBehaviour
     txPemenang = GameObject.Find("Pemenang").GetComponent<Text>();
 
     if (scoreP1 > scoreP2)
-        txPemenang.text = "Player Biru Pemenang!";
+        txPemenang.text = "Player 1 Pemenang!";
     else if (scoreP2 > scoreP1)
-        txPemenang.text = "Player Merah Pemenang!";
+        txPemenang.text = "Player 2 Pemenang!";
     else
         txPemenang.text = "Seri!";
 }
@@ -166,6 +175,8 @@ public class BallController : MonoBehaviour
             countdownText.text = i.ToString();
             yield return new WaitForSeconds(1f);
         }
+        trail.Clear();
+        trail.enabled = true;
         countdownText.text = "Mulai!";
         yield return new WaitForSeconds(1f);
         countdownText.gameObject.SetActive(false);
@@ -180,5 +191,18 @@ public class BallController : MonoBehaviour
 
         Vector2 arahMulai = arah ?? new Vector2(Random.Range(0, 2) == 0 ? -2 : 2, 0);
         rigid.AddForce(arahMulai.normalized * force);
+    }
+
+    IEnumerator SoundGoal(Vector2 arah)
+    {
+        rigid.linearVelocity = Vector2.zero;
+
+        if (goalSound != null)
+        {
+            SoundFx.PlayOneShot(goalSound);
+            yield return new WaitForSeconds(goalSound.length);
+        }
+
+        StartCoroutine(HitungMundurDanMulaiGame(arah));
     }
 }
