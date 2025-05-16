@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 
 public class KelolaHalaman : MonoBehaviour
@@ -9,6 +10,7 @@ public class KelolaHalaman : MonoBehaviour
     public bool isEscapeToTargetScene;
     public string targetScene;
 
+    public AudioSource audioTombol;
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
@@ -30,8 +32,20 @@ public class KelolaHalaman : MonoBehaviour
 
     public void PindahKeScene(string namaScene)
     {
-        // Simpan scene saat ini sebelum pindah
+        StartCoroutine(MainkanSuaraLaluPindah(namaScene));
+    }
+
+    IEnumerator MainkanSuaraLaluPindah(string namaScene)
+    {
+        // Simpan nama scene sebelumnya
         SceneHistory.previousSceneName = SceneManager.GetActiveScene().name;
+
+        if (audioTombol != null)
+        {
+            audioTombol.Play();
+            yield return new WaitForSeconds(audioTombol.clip.length); // Tunggu suara selesai
+        }
+
         SceneManager.LoadScene(namaScene);
     }
     public void KeluarGame()

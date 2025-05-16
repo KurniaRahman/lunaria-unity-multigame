@@ -3,22 +3,40 @@ using UnityEngine.SceneManagement;
 
 public class ModeSelector : MonoBehaviour
 {
+    public AudioSource audioTombol; // Tambahan
+
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-        SceneManager.LoadScene("pilihGame");          
+            if (audioTombol != null)
+                audioTombol.Play();
+
+            StartCoroutine(PindahSceneDenganDelay("pilihGame"));
         }
     }
+
     public void ModePvsP()
     {
+        if (audioTombol != null)
+            audioTombol.Play();
+
         PlayerPrefs.SetString("ModeGame", "PvP");
-        SceneManager.LoadScene("mainHockey"); 
+        StartCoroutine(PindahSceneDenganDelay("mainHockey"));
     }
 
     public void ModePvsAI()
     {
+        if (audioTombol != null)
+            audioTombol.Play();
+
         PlayerPrefs.SetString("ModeGame", "PvAI");
-        SceneManager.LoadScene("pilihKesulitan");
+        StartCoroutine(PindahSceneDenganDelay("pilihKesulitan"));
+    }
+
+    private System.Collections.IEnumerator PindahSceneDenganDelay(string namaScene)
+    {
+        yield return new WaitForSeconds(audioTombol != null ? audioTombol.clip.length : 0.2f);
+        SceneManager.LoadScene(namaScene);
     }
 }

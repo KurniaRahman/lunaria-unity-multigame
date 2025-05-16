@@ -9,6 +9,8 @@ public class DeteksiBenda : MonoBehaviour
     public AudioClip audioSalah;
     public Text textScore;
     public Sprite gambarTerbuka;
+    public Sprite gambarSalah; 
+
 
     private AudioSource mediaPlayerBenar;
     private AudioSource mediaPlayerSalah;
@@ -67,17 +69,23 @@ void Start()
         }
         else
         {
-            Data.score -= 5;
-            textScore.text = Data.score.ToString();
+        Data.score -= 5;
+        textScore.text = Data.score.ToString();
 
-            gerakPindah.BendaSudahDitempatkan();
-            mediaPlayerSalah.Play();
+            if (spriteRenderer != null && gambarSalah != null)
+            {
+                spriteRenderer.sprite = gambarSalah;
+                StartCoroutine(KembalikanGambar()); 
+            }
+
+        gerakPindah.BendaSudahDitempatkan();
+        mediaPlayerSalah.Play();
         }
     }
 
     IEnumerator KembalikanGambar()
     {
-        yield return new WaitForSeconds(2f); // Tunggu 2 detik
+        yield return new WaitForSeconds(1f); // Tunggu 2 detik
         if (spriteRenderer != null)
         {
             spriteRenderer.sprite = gambarAwal;

@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &5577965 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1760800585177186034, guid: aa9ef827874593a43b63497677930d06, type: 3}
+  m_PrefabInstance: {fileID: 965286253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &242570462
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +217,7 @@ GameObject:
   - component: {fileID: 251338450}
   - component: {fileID: 251338452}
   - component: {fileID: 251338453}
-  - component: {fileID: 251338454}
+  - component: {fileID: 251338455}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -449,7 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paddleKiri: {fileID: 263666204}
   paddleKanan: {fileID: 401340730}
---- !u!114 &251338454
+--- !u!114 &251338455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -458,10 +463,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 251338446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d07f24c32e495948850b31f4447a24e, type: 3}
+  m_Script: {fileID: 11500000, guid: 37442cb7a19630048bf2ff184da0b5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isEscapeToExit: 0
+  isEscapeToPreviousScene: 0
+  isEscapeToTargetScene: 0
+  targetScene: 
+  audioTombol: {fileID: 5577965}
 --- !u!1 &263666204
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +507,7 @@ MonoBehaviour:
   batasAtas: 3.4
   batasBawah: -3.4
   batasKanan: -1
-  batasKiri: -8.25
+  batasKiri: -8
   kecepatan: 7
   axisY: vertical1
   axisH: horizontal1
@@ -795,7 +804,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.5, y: 0}
+  m_Offset: {x: -3, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -912,7 +921,7 @@ MonoBehaviour:
   bola: {fileID: 0}
   batasAtas: 3.4
   batasBawah: -3.4
-  batasKanan: 8.25
+  batasKanan: 8
   batasKiri: 1
   kecepatan: 7
   axisY: vertical2
@@ -1050,7 +1059,7 @@ MonoBehaviour:
   batasAtas: 3.4
   batasBawah: -3.4
   batasKiri: 2
-  batasKanan: 8.25
+  batasKanan: 7.75
   marginError: 2
 --- !u!1 &507712880
 GameObject:
@@ -1398,7 +1407,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.5, y: 0}
+  m_Offset: {x: 3, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1640,6 +1649,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864513926}
   m_CullTransparentMesh: 1
+--- !u!1001 &965286253
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 972135321110466603, guid: aa9ef827874593a43b63497677930d06, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.5358088
+      objectReference: {fileID: 0}
+    - target: {fileID: 972135321110466603, guid: aa9ef827874593a43b63497677930d06, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.810384
+      objectReference: {fileID: 0}
+    - target: {fileID: 972135321110466603, guid: aa9ef827874593a43b63497677930d06, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.21307595
+      objectReference: {fileID: 0}
+    - target: {fileID: 972135321110466603, guid: aa9ef827874593a43b63497677930d06, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 972135321110466603, guid: aa9ef827874593a43b63497677930d06, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 972135321110466603, guid: aa9ef827874593a43b63497677930d06, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 972135321110466603, guid: aa9ef827874593a43b63497677930d06, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 972135321110466603, guid: aa9ef827874593a43b63497677930d06, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 972135321110466603, guid: aa9ef827874593a43b63497677930d06, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 972135321110466603, guid: aa9ef827874593a43b63497677930d06, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136337203648289320, guid: aa9ef827874593a43b63497677930d06, type: 3}
+      propertyPath: m_Name
+      value: ButtonSound
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aa9ef827874593a43b63497677930d06, type: 3}
 --- !u!1 &1054185387
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,16 +2302,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 251338454}
-        m_TargetAssemblyTypeName: HalamanManager, Assembly-CSharp
-        m_MethodName: MulaiPermainan
-        m_Mode: 1
+      - m_Target: {fileID: 251338455}
+        m_TargetAssemblyTypeName: KelolaHalaman, Assembly-CSharp
+        m_MethodName: PindahKeScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: mainHockey
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1248174493
@@ -3189,7 +3255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 200
   hitSound: {fileID: 8300000, guid: 28cc60791928c5747b6840a15ad88a9e, type: 3}
-  goalSound: {fileID: 8300000, guid: cb649cd5c37df8648b2bb700bc6c8b41, type: 3}
+  goalSound: {fileID: 8300000, guid: 85350f15201791648a2c9c4fd20c2e39, type: 3}
 --- !u!50 &1961059014
 Rigidbody2D:
   serializedVersion: 5
@@ -3657,9 +3723,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 1308613118}
     m_Modifications:
     - target: {fileID: 1311390729153055742, guid: 61062196cc61bdd46bf5a854e775c7d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311390729153055742, guid: 61062196cc61bdd46bf5a854e775c7d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 251338454}
+      objectReference: {fileID: 251338455}
+    - target: {fileID: 1311390729153055742, guid: 61062196cc61bdd46bf5a854e775c7d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PindahKeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311390729153055742, guid: 61062196cc61bdd46bf5a854e775c7d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: KelolaHalaman, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311390729153055742, guid: 61062196cc61bdd46bf5a854e775c7d3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: pilihLawan
+      objectReference: {fileID: 0}
     - target: {fileID: 3987754770395320310, guid: 61062196cc61bdd46bf5a854e775c7d3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3769,3 +3851,4 @@ SceneRoots:
   - {fileID: 1842871024}
   - {fileID: 313598301}
   - {fileID: 1179077113}
+  - {fileID: 965286253}
